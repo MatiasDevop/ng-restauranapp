@@ -31,16 +31,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Batman</td>
-                <td>battest@gmail.com</td>
-                <td>2312312312</td>
-                <td>Location fix</td>
-                <td>Coffe</td>
+            <tr *ngFor="let item of allRestaurantData">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.services}}</td>
                 <td>
-                    <button class="btn btn-info">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-success" (click)="onEditRestaurant(item)" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit</button>
+                    <button class="btn btn-danger" (click)="deleteRestaurant(item)">Delete</button>
                 </td>
                 <td></td>
             </tr>
@@ -52,7 +52,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Restaurant Records Form</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -81,7 +81,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add Details</button>
+          <button type="button" class="btn btn-primary" (click)="addRestaurant()">Add Details</button>
+          <button type="button" class="btn btn-primary" (click)="updateRestaurant()">Update Details</button>
         </div>
       </div>
     </div>

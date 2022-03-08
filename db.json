@@ -1,23 +1,24 @@
 {
-    "posts": [
-    { 
-        "id": 1, 
-        "title": "json-server", 
-        "author": "typicode" },
+  "posts": [
     {
-        "id": 2,
-        "name": "",
-        "email": "",
-        "mobile": "",
-        "address": "",
-        "services": ""
+      "id": 4,
+      "name": "Cain",
+      "email": "1",
+      "mobile": "4321312",
+      "address": "Street Primm",
+      "services": "sushi, peig"
+    },
+    {
+      "id": 5,
+      "name": "Test Updated",
+      "email": "tes@gmail.com",
+      "mobile": "4434343",
+      "address": "street innnnn",
+      "services": "shi, niku"
     }
-    ],
-    "comments": [
-    { 
-        "id": 1, 
-        "body": "some comment",
-        "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
 }
