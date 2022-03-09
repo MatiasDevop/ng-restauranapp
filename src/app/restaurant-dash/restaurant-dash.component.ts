@@ -13,6 +13,8 @@ export class RestaurantDashComponent implements OnInit {
   restaurantModelObj:RestaurantData = new RestaurantData;;
   allRestaurantData:RestaurantData[]=[];
 
+  showAdd!:boolean;
+  showBtn!:boolean;
   constructor(private formBuilder: FormBuilder,
         private api:ApiService) {}
 
@@ -28,6 +30,12 @@ export class RestaurantDashComponent implements OnInit {
   }
   //Noew Subcribing our data with is maped via services..
 
+  clickAddResto(){
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showBtn = false;
+  }
+
   addRestaurant(){
     this.restaurantModelObj.name = this.formValue.value.name;
     this.restaurantModelObj.email = this.formValue.value.email;
@@ -35,10 +43,16 @@ export class RestaurantDashComponent implements OnInit {
     this.restaurantModelObj.address = this.formValue.value.address;
     this.restaurantModelObj.services = this.formValue.value.services;
 
+    console.log(this.restaurantModelObj);
     this.api.postRestaurant(this.restaurantModelObj).subscribe(res =>{
       console.log(res);
       alert("Restaurant records Added successfull");
-      this.formValue.reset();
+      //Clear fill from data 0
+      let ref = document.getElementById('clear');
+      ref?.click();
+
+      this.formValue.reset()
+      this.getAllData();
     },
     err =>{
       alert("An error ocurred..");
@@ -59,6 +73,10 @@ export class RestaurantDashComponent implements OnInit {
   }
 
   onEditRestaurant(data:any){
+
+    this.showAdd = false;
+    this.showBtn = true;
+
     this.restaurantModelObj.id = data.id;
     this.formValue.controls['name'].setValue(data.name);
     this.formValue.controls['email'].setValue(data.email);

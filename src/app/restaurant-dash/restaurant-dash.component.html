@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h2>Restaurant Record App</h2>
         <div class="d-flex">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" (click)="clickAddResto()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Add Restaurant
             </button>
         </div>
@@ -81,8 +81,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="addRestaurant()">Add Details</button>
-          <button type="button" class="btn btn-primary" (click)="updateRestaurant()">Update Details</button>
+          <button type="button" *ngIf="showAdd" class="btn btn-primary" (click)="addRestaurant()">Add Details</button>
+          <button type="button" *ngIf="showBtn" class="btn btn-primary" (click)="updateRestaurant()">Update Details</button>
         </div>
       </div>
     </div>
