@@ -6,28 +6,29 @@
                     <h1>Restaurant Signup</h1>
                     <h5>Get Free Membership</h5> <hr>
                 </div>
-                <form>
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
                     <div class="mb-3">
                       <label class="form-label">Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input formControlName="name" placeholder="Enter name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Mobile Number</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input formControlName="mobile" placeholder="Enter Mobile" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input formControlName="email" placeholder="Enter Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <input formControlName="password" placeholder="Enter password" type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <button type="submit" class="btn btn-primary">Signup</button>
                 </form>
+                <a routerLink="/login" routerLinkActive="router-link-active">Already Member? Click to login!</a>
             </div>
         </div>
     </div>

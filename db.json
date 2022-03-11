@@ -17,6 +17,22 @@
       "services": "Ramen"
     }
   ],
+  "signup": [
+    {
+      "name": "admin",
+      "email": "test@gmail.com",
+      "mobile": "123",
+      "password": "cerverus",
+      "id": 1
+    },
+    {
+      "name": "testy",
+      "email": "testy@gmail.com",
+      "mobile": "12345",
+      "password": "12345",
+      "id": 2
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"
